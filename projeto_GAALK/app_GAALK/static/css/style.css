@@ -328,10 +328,7 @@ header .image-text .description{
     gap: 1em;
 }
 
-.campo input[type="text"],
-.campo input[type="password"],
-.campo input[type="date"],
-.campo input[type="tel"] {
+.campo input {
     height: 100%;
     width: 100%;
     outline: none;
@@ -344,10 +341,7 @@ header .image-text .description{
     padding: 1em;
 }
 
-.campo input[type="text"]:focus,
-.campo input[type="password"]:focus,
-.campo input[type="date"]:focus,
-.campo input[type="tel"]:focus {
+.campo input:focus {
     background-color: var(--searchbar-color);
 }
 
@@ -355,6 +349,7 @@ header .image-text .description{
     background-color: var(--body-color);
     color: var(--text-color);
     margin-left: 7em;
+    margin-bottom: 2em;
     width: 10em;
     padding: 0.5em;
     font-size: 20px;

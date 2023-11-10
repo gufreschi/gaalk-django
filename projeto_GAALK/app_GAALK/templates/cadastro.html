@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+   
+    <section>
+        <div class="feed-divider"></div>
+        <h2 id="heading1">Cadastro</h2>
+
+        <form class="cadastro-card" method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <fieldset class="cadastro-item">
+
+                <div class="campo">
+                    <label for="nome"></label>
+                    <br>
+                    <input required type="text" name="nome" placeholder="Nome de usuário"/>
+                </div>
+
+                <div class="campo">
+                    <label for="email"></label>
+                    <br>
+                    <input required type="email" name="email" placeholder="Email"/>
+                </div>
+
+                <div class="campo">
+                    <label for="date"></label>
+                    <br>
+                    <input required type="text" name="data_nascimento" placeholder ="Data de nascimento" onfocus="this.type='date'" onblur="this.type='text'" />
+                </div>
+
+                <div class="campo">
+                <label for="telefone"></label>
+                <br>
+                <input required type="tel" name="telefone" placeholder="Telefone"/>
+                </div>
+
+                <div class="campo">
+                    <label for="senha"></label>
+                    <br>
+                    <input required type="password" name="senha" minlength="8" placeholder="Senha"/>
+                </div>
+
+                <div class="campo">
+                    <label for="conf_senha"></label>
+                    <br>
+                    <input required type="password" name="conf_senha" minlength="8" placeholder="Repita a senha"/>
+                </div>
+
+                <div class="campo">
+                <button type="submit" class="button">Cadastrar</button>
+                </div>
+                
+            </fieldset>
+
+        </form>
+        
+    </section>
+
+{% endblock %}

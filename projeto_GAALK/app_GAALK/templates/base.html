@@ -17,7 +17,7 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <!--FAVICON-->
-    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static "images/ticket-favicon.ico" %}" type="image/x-icon">
 
     <title>GAALK</title>
 </head>
@@ -50,6 +50,8 @@
                 </ul>
 
                 <ul class="menu-links">
+
+                    {% if user.is_authenticated %}
                     <li class="nav-link">
                         <a href="{% url 'home' %}">
                             <i class='bx bx-home-alt icon' ></i>
@@ -70,15 +72,6 @@
                             <span class="text nav-text">Biblioteca</span>
                         </a>
                     </li>
-                    
-                    <!--
-                    <li class="nav-link">
-                        <a href="#">
-                           <i class='bx bx-award icon'></i>
-                            <span class="text nav-text">Premiações</span>
-                        </a>
-                    </li>
-                    -->
 
                     <li class="nav-link">
                         <a href="#">
@@ -86,11 +79,28 @@
                             <span class="text nav-text">Notificações</span>
                         </a>
                     </li>
+                    {% endif %}
 
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-group icon'></i>
+                            <span class="text nav-text">Quem somos nós?</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
+            {% if user.is_authenticated %}
             <div class="bottom-content">
+                <ul>
+                    <li class="">
+                        <a href="{% url 'logout' %}">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+                {% else %}
                 <ul>
                     <li class="">
                         <a href="{% url 'login' %}">
@@ -100,8 +110,9 @@
                     </li>
                 </ul>
             </div>
-        </div>
+            {% endif %}
 
+        </div>
     </nav>
 
     <script src="{% static "js/script.js" %}"></script>

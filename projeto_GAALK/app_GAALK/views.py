@@ -1,29 +1,30 @@
-from django.shortcuts import render
-from .models import Usuario
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 
 def home(request):
-    return render(request,'usuarios/index.html')
-
-def login(request):
-    return render(request,'usuarios/login.html')
+    return render(request, 'home.html')
 
 def cadastro(request):
-    return render(request,'usuarios/cadastro.html')
+    return render(request, 'cadastro.html')
 
-def usuarios(request):
-    # Salvar os dados da tela para o banco de dados.
-    novo_usuario = Usuario()
-    novo_usuario.nome = request.POST.get('nome')
-    novo_usuario.cpf = request.POST.get('cpf')
-    novo_usuario.data_nascimento = request.POST.get('data_nascimento')
-    novo_usuario.telefone = request.POST.get('telefone')
-    novo_usuario.email = request.POST.get('email')
-    novo_usuario.senha = request.POST.get('senha')
-    novo_usuario.conf_senha = request.POST.get('conf_senha')
-    novo_usuario.save()
+def login_user(request):
+    if request.method == 'POST':
+        nome_usuario = request.POST['nome_usuario']
+        senha = request.POST['senha']
+        usuario = authenticate(request, username=nome_usuario, password=senha)
+        if usuario is not None:
+            login(request, usuario)
+            messages.success(request, ('Você está conectado!'))
+            return redirect('home')
+        else:
+            messages.error(request, ('Aconteceu algum erro. Tente novamente...'))
+            return redirect('login')
 
-    #Retornar para a pagina de login.
-    return render(request, 'usuarios/login.html')
+    else:
+        return render(request, 'login.html', {})
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, ('Você foi desconectado...'))
+    return redirect('login')
