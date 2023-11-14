@@ -115,6 +115,21 @@
         </div>
     </nav>
 
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+
+            <div class="message-container" id="message-container">
+                <div class="message-box">
+                    <span class="close-button" onclick="closeMessage()">×</span>
+                    <p class="message-text">{{ message }}</p>
+                </div>
+            </div>
+        
+            {% endfor %}
+        {% endif %}
+    </div>
+
     <script src="{% static "js/script.js" %}"></script>
 
     {% block content %}
