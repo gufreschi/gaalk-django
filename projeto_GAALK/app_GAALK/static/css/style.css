@@ -166,6 +166,7 @@ header .image-text .description{
     font-weight: 500;
     transition: var(--tran-05);
 }
+
 .sidebar li a{
     list-style: none;
     height: 100%;
@@ -381,7 +382,7 @@ header .image-text .description{
     width: 50%;
     height: 3em;
     display: flex;
-    margin-left: 20%em;
+    margin-left: 20%;
     margin-top: 1em;
     border: 1px;
     border-radius: 5px;

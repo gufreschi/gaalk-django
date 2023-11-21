@@ -93,16 +93,18 @@
             {% if user.is_authenticated %}
             <div class="bottom-content">
                 <ul>
-                    <li class="">
+                    <li>
                         <a href="{% url 'logout' %}">
                             <i class='bx bx-log-out icon'></i>
                             <span class="text nav-text">Sair</span>
                         </a>
                     </li>
                 </ul>
-                {% else %}
+            </div>
+            {% else %}
+            <div class="bottom-content">
                 <ul>
-                    <li class="">
+                    <li>
                         <a href="{% url 'login' %}">
                             <i class='bx bx-log-in icon'></i>
                             <span class="text nav-text">Entrar</span>

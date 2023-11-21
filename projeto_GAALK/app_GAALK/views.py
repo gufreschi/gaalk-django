@@ -6,27 +6,6 @@ from django.contrib.auth.models import User
 def home(request):
     return render(request, 'home.html', {})
 
-def login_user(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        senha1 = request.POST['senha1']
-        user = authenticate(request, username=username, password=senha1)
-        if user is not None:
-            login(request, user)
-            messages.success(request, ('Você está conectado!'))
-            return redirect('home')
-        else:
-            messages.error(request, ('Aconteceu algum erro. Tente novamente...'))
-            return redirect('login')
-
-    else:
-        return render(request, 'login.html', {})
-
-def logout_user(request):
-    logout(request)
-    messages.success(request, ('Você foi desconectado...'))
-    return redirect('login')
-
 def register_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -51,3 +30,24 @@ def register_user(request):
             return redirect('cadastro')
     else:
         return render(request, 'cadastro.html')
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        senha1 = request.POST['senha1']
+        user = authenticate(request, username=username, password=senha1)
+        if user is not None:
+            login(request, user)
+            messages.success(request, ('Você está conectado!'))
+            return redirect('home')
+        else:
+            messages.error(request, ('Aconteceu algum erro. Tente novamente...'))
+            return redirect('login')
+
+    else:
+        return render(request, 'login.html', {})
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, ('Você foi desconectado...'))
+    return redirect('login')
