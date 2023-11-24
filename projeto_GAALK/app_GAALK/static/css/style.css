@@ -259,6 +259,15 @@ header .image-text .description{
     background-color: var(--secondary-color)
 }
 
+.feed-divider {
+    display: flex;
+    width: 50%;
+    height: 2px;
+    align-items: center;
+    margin-left: 25%;
+    background-color: var(--secondary-color)
+}
+
 .card-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -287,7 +296,15 @@ header .image-text .description{
     .card-list .card-item {
         margin-left: 4.7em;
     }
-    
+
+    .campo input {
+        width: 95%;
+        margin-left: 0.35em;
+    }
+
+    .button {
+        margin-left: 0em;
+    }
 }
 
 .card-list .card-item:hover {
@@ -346,7 +363,7 @@ header .image-text .description{
     background-color: var(--searchbar-color);
 }
 
-.campo .button {
+.button {
     background-color: var(--body-color);
     color: var(--text-color);
     margin-left: 7em;
@@ -360,7 +377,7 @@ header .image-text .description{
     outline: none;
 }
 
-.campo .button:hover {
+.button:hover {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 }
@@ -379,34 +396,64 @@ header .image-text .description{
 
 .message-container {
     background-color: var(--secondary-color);
-    width: 50%;
-    height: 3em;
+    height: 4em;
     display: flex;
     margin-left: 20%;
+    margin-right: 20%;
     margin-top: 1em;
     border: 1px;
     border-radius: 5px;
 }
 
+.message-box {
+    display: flex;
+    justify-content: center;
+}
+
 .message-text {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 5px;
-    margin-top: 8px;
     font-size: 1.5em;
     color: #000;
 }
 
 .close-button {
-    display: block;
+    display: flex;
     font-size: 2em;
-    position: absolute;
-    margin-left: 48%;
+    position: fixed;
+    right: 20%;
+    top: 1%;
     cursor: pointer;
 }
 
 .close-button:hover {
     opacity: var(--primary-color);
     color: var(--primary-color);
+}
+
+@media screen and (max-width: 600px) {
+    .campo input {
+        width: 95%;
+        margin-left: 0.35em;
+    }
+
+    .button {
+        margin-left: 25%;
+        width: 50%;
+    }
+
+    .message-container {    
+        margin-left: 34%;
+        margin-right: 14%;
+    }
+
+    .close-button {
+        right: 14%;
+    }
+}
+
+.tmdb {
+    max-width: 100%;
+    height: auto;
 }

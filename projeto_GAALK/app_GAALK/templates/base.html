@@ -72,19 +72,12 @@
                             <span class="text nav-text">Biblioteca</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notificações</span>
-                        </a>
-                    </li>
                     {% endif %}
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-group icon'></i>
-                            <span class="text nav-text">Quem somos nós?</span>
+                        <a href="{% url 'sobre' %}">
+                            <i class='bx bx-at icon'></i>
+                            <span class="text nav-text">Sobre nós</span>
                         </a>
                     </li>
                 </ul>
@@ -123,9 +116,9 @@
 
             <div class="message-container" id="message-container">
                 <div class="message-box">
-                    <span class="close-button" onclick="closeMessage()">×</span>
                     <p class="message-text">{{ message }}</p>
                 </div>
+                <span class="close-button" onclick="closeMessage()">×</span>
             </div>
         
             {% endfor %}

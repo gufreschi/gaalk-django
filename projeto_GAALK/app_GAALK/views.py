@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 def home(request):
     return render(request, 'home.html', {})
 
+def sobre(request):
+    return render(request, 'sobre.html', {})
+
 def register_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -17,16 +20,16 @@ def register_user(request):
         
         user = User.objects.filter(username=username).first()
         if user:
-            messages.error(request, ('Esse nome de usuário já existe'))
+            messages.error(request, ('Nome indisponível.'))
             return redirect('cadastro')
         
         if senha1 == senha2:
             user = User.objects.create_user(username=username, email=email, password=senha1)
             user.save()
-            messages.success(request, ('Cadastro realizado com sucesso!'))
+            messages.success(request, ('Cadastro realizado!'))  
             return redirect('login')
         else:
-            messages.error(request, ('As senhas devem ser iguais.'))
+            messages.error(request, ('As senhas não coincidiram.'))
             return redirect('cadastro')
     else:
         return render(request, 'cadastro.html')
@@ -41,7 +44,7 @@ def login_user(request):
             messages.success(request, ('Você está conectado!'))
             return redirect('home')
         else:
-            messages.error(request, ('Aconteceu algum erro. Tente novamente...'))
+            messages.error(request, ('Erro. Tente Novamente...'))
             return redirect('login')
 
     else:

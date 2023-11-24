@@ -2,7 +2,6 @@
 {% block content %}
    
     <section>
-        <div class="feed-divider"></div>
         <h2 id="heading1">Cadastro</h2>
 
         <form class="cadastro-card" method="POST" action="{% url 'cadastro' %}">
@@ -37,7 +36,7 @@
                     <input required type="password" name="senha2" minlength="8" placeholder="Repita a senha"/>
                 </div>
 
-                <div class="campo">
+                <div>
                 <button type="submit" class="button">Cadastrar</button>
                 </div>
                 
