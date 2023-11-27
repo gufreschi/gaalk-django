@@ -6,31 +6,27 @@
         <h2 id="heading1">Filmes</h2>
         <div class="feed-divider-movies"></div>
 
-        <div class="card-list">
-            <a href="#" class="card-item">
-                <img src="{% static "images/the-creator-poster.jpg" %}" alt="card image">
-                <h2 class="movie-title">The Creator</h2>
-                <h3 class="movie-info">Infos</h3>
-            </a>
+        {% for poster, title, vote_average, vote_count, overview in posters %}
+            <div class="card-list">
 
-            <a href="#" class="card-item">
-                <img src="{% static "images/asteroid-city-poster.jpeg" %}" alt="card image">
-                <h2 class="movie-title">Asteroid City</h2>
-                <h3 class="movie-info">Infos</h3>
-            </a>
+                <div class="card-item"> 
+                    <img src="https://image.tmdb.org/t/p/w500/{{ poster }}" alt="a movie poster">
+                    <h2 class="movie-title"><strong>{{ title }}</strong></h2>
 
-            <a href="#" class="card-item">
-                <img src="{% static "images/guardians-of-the-galaxy-3-poster.jpeg" %}" alt="card image">
-                <h2 class="movie-title">Guardians of the Galaxy Vol. 3</h2>
-                <h3 class="movie-info">Infos</h3>
-            </a>
+                    <div class="info-container">
+                        <h3 class="movie-title-hover">{{ title }}</h3>
 
-            <a href="#" class="card-item">
-                <img src="{% static "images/jw4-baba-yaga-poster.jpg" %}" alt="card image">
-                <h2 class="movie-title">John Wick 4: Baba Yaga</h2>
-                <h3 class="movie-info">Infos</h3>
-            </a>
-        </div>
+                        <div class="additional-info">
+                            <p class="rating">{{ vote_average }} &#9733; &lpar;{{ vote_count }}&rpar; </p>                  
+                            <p class="overview">{{ overview }}</p>                                     
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        {% endfor %}
 
     </section>
 

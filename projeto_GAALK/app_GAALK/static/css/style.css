@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "SoDo Sans SemiBold";
 }
 
-:root{
+:root {
     /* ===== Colors ===== */
     --body-color: #1d1b1b;
     --sidebar-color: #333333;
@@ -21,17 +21,17 @@
     --tran-05: all 0.3s ease;
 }
 
-body{
+body {
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
-::selection{
+::selection {
     background-color: var(--primary-color);
     color: #fff;
 }
 
- .sidebar{
+ .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -42,11 +42,11 @@ body{
     transition: var(--tran-05);
     z-index: 100;  
 }
-.sidebar.close{
+.sidebar.close {
     width: 5.5em;
 }
 
-.sidebar li{
+.sidebar li {
     height: 50px;
     list-style: none;
     display: flex;
@@ -55,12 +55,12 @@ body{
 }
 
 .sidebar header .image,
-.sidebar .icon{
+.sidebar .icon {
     min-width: 60px;
     border-radius: 6px;
 }
 
-.sidebar .icon{
+.sidebar .icon {
     min-width: 60px;
     border-radius: 6px;
     height: 100%;
@@ -71,30 +71,30 @@ body{
 }
 
 .sidebar .text,
-.sidebar .icon{
+.sidebar .icon {
     color: var(--text-color);
     transition: var(--tran-03);
 }
 
-.sidebar .text{
+.sidebar .text {
     font-size: 17px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
 }
-.sidebar.close .text{
+.sidebar.close .text {
     opacity: 0;
 }
 
-.sidebar header{
+.sidebar header {
     position: relative;
 }
 
-.sidebar header .image-text{
+.sidebar header .image-text {
     display: flex;
     align-items: center;
 }
-.sidebar header .logo-text{
+.sidebar header .logo-text {
     display: flex;
     flex-direction: column;
 }
@@ -104,24 +104,24 @@ header .image-text .name {
     font-weight: 600;
 }
 
-header .image-text .description{
+header .image-text .description {
     font-size: 16px;
     margin-top: -2px;
     display: block;
 }
 
-.sidebar header .image{
+.sidebar header .image {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sidebar header .image img{
+.sidebar header .image img {
     width: 40px;
     border-radius: 6px;
 }
 
-.sidebar header .toggle{
+.sidebar header .toggle {
     position: absolute;
     top: 50%;
     right: -25px;
@@ -139,22 +139,22 @@ header .image-text .description{
     transition: var(--tran-05);
 }
 
-.sidebar.close .toggle{
+.sidebar.close .toggle {
     transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu{
+.sidebar .menu {
     margin-top: 40px;
 }
 
-.sidebar li.search-box{
+.sidebar li.search-box {
     border-radius: 6px;
     background-color: var(--searchbar-color);
     cursor: pointer;
     transition: var(--tran-05);
 }
 
-.sidebar li.search-box input{
+.sidebar li.search-box input {
     height: 100%;
     width: 100%;
     outline: none;
@@ -167,7 +167,7 @@ header .image-text .description{
     transition: var(--tran-05);
 }
 
-.sidebar li a{
+.sidebar li a {
     list-style: none;
     height: 100%;
     background-color: transparent;
@@ -180,7 +180,7 @@ header .image-text .description{
     transition: var(--tran-03);
 }
 
-.sidebar li a:hover{
+.sidebar li a:hover {
     background-color: var(--primary-color);
 }
 
@@ -189,7 +189,7 @@ header .image-text .description{
     color: var(--sidebar-color);
 }
 
-.sidebar .menu-bar{
+.sidebar .menu-bar {
     height: calc(100% - 55px);
     display: flex;
     flex-direction: column;
@@ -197,18 +197,18 @@ header .image-text .description{
     overflow-y: scroll;
 }
 
-.menu-bar::-webkit-scrollbar{
+.menu-bar::-webkit-scrollbar {
     display: none;
 }
 
-.sidebar .menu-bar .mode{
+.sidebar .menu-bar .mode {
     border-radius: 6px;
     background-color: var(--searchbar-color);
     position: relative;
     transition: var(--tran-05);
 }
 
-.switch::before{
+.switch::before {
     content: '';
     position: absolute;
     height: 15px;
@@ -221,7 +221,7 @@ header .image-text .description{
     transition: var(--tran-04);
 }
 
-.home{
+.home {
     position: absolute;
     top: 0;
     top: 0;
@@ -232,14 +232,14 @@ header .image-text .description{
     transition: var(--tran-05);
 }
 
-.home .text{
+.home .text {
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
     padding: 12px 60px;
 }
 
-.sidebar.close ~ .home{
+.sidebar.close ~ .home {
     left: 78px;
     height: 100vh;
     width: calc(100% - 78px);
@@ -269,31 +269,26 @@ header .image-text .description{
 }
 
 .card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    position: relative;
+    display: inline-flex;
     max-width: 1250px;
-    margin: 10em auto;
+    margin-left: 6em;
+    margin-top: 1em;
+    margin-bottom: 5em;
     padding: 20px;
-    row-gap: 10em;
 }
 
 .card-list .card-item {
-    background: #fff;
-    padding: 0.2em;
+    background: var(--body-color);
     width: 18em;
-    margin-left: 3.2em;
-    margin-top: -8em;
-    border-radius: 8px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
     list-style: none;
     cursor: pointer;
     text-decoration: none;
-    border: 2px solid transparent;
-    transition: border 0.5s ease;
 }
 
-@media screen and (max-width: 1300px) {
-    .card-list .card-item {
+@media screen and (max-width: 600px) {
+    .card-list {
+        margin-bottom: 0;
         margin-left: 4.7em;
     }
 
@@ -303,29 +298,56 @@ header .image-text .description{
     }
 
     .button {
-        margin-left: 0em;
+        margin-left: 25%;
+        width: 50%;
     }
-}
 
-.card-list .card-item:hover {
-    border: 2px solid #000;
+    .message-container {    
+        margin-left: 34%;
+        margin-right: 14%;
+    }
+
+    .close-button {
+        right: 14%;
+    }
 }
 
 .card-list .card-item img {
     width: 100%;
-    border-radius: 8px;
     object-fit: cover;
 }
 
-.movie-title {
-    color: #000;
-    font-size: 1.5em;
-} 
+.info-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: none;
+}
 
-.movie-info {
-    color: #131313;
+.card-item:hover .info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+.rating {
+    margin-top: 1em;
+}
+
+.overview {
+    margin-top: 1em;
     font-size: 1em;
 }
+
+.movie-title {
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 10px;
+} 
 
 .cadastro-card,
 .login-card {
@@ -432,28 +454,14 @@ header .image-text .description{
     color: var(--primary-color);
 }
 
-@media screen and (max-width: 600px) {
-    .campo input {
-        width: 95%;
-        margin-left: 0.35em;
-    }
-
-    .button {
-        margin-left: 25%;
-        width: 50%;
-    }
-
-    .message-container {    
-        margin-left: 34%;
-        margin-right: 14%;
-    }
-
-    .close-button {
-        right: 14%;
-    }
+.tmdb {
+    margin-top: 2em;
+    display: inline-block;
+    width: 50%;
 }
 
-.tmdb {
-    max-width: 100%;
-    height: auto;
+.references img{
+    display: inline-block;
+    width: 40px;
+
 }
