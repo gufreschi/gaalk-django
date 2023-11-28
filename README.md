@@ -1,4 +1,8 @@
-# GAALK - Introdução
+# GAALK
+
+Hospedagem atual do site: https://projeto-gaalk.fly.dev/
+
+# Introdução
 
 - ## Descrição do projeto:
 Queremos criar um site para catálogo de filmes com algumas opções de interação com o usuário, para que os usuários possam ter uma ferramenta filtrada e que ajude-os a se organizar e expor opiniões.
@@ -31,7 +35,7 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 7. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
 8. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
 
-- ## Colaboradores:
+# Colaboradores:
 1. André Igor Bragança Altivo Passos - 202302376843;
 2. Luigi Trevisan Gomes - 202302381529;
 3. Luiz Gustavo de Lara Freschi - 202303112581;
