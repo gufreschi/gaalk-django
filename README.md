@@ -21,12 +21,12 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 
 - ## Baixar e instalar:
 1. Python em sua última versão. É recomendável que você execute o download no site oficial do python e busque por um passo à passo para não deixar passar nenhuma opção.
-2. Com o python instalado, você deve agora baixar o seu framework Django. No prompt de comando execute o comando 'pip install django'.
+2. Com o python instalado, você deve agora baixar o seu framework Django. No prompt de comando execute o comando `pip install django`.
 3. Com o framework Django instalado, clone este repositório em sua máquina e abra o conteúdo em alguma IDE (exemplo: Visual Studio Code).
-4. Com o projeto aberto, execute o comando CTRL + J para abrir o terminal para instalar um pacote do Django para lidar com a API com o comando install requests.
-5. Agora, digite cd .\projeto_GAALK\ para acessar a pasta com o arquivo manage.py.
-6. Por fim, rode o comando python .\manage.py runserver e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
-7. Abra o link da porta local pelo terminal com CTRL + Click ou diretamente no navegador com a URL: http://127.0.0.1:8000/.
+4. Com o projeto aberto, execute o comando `CTRL + J` para abrir o terminal para instalar um pacote do Django para lidar com a API com o comando `install requests`.
+5. Agora, digite `cd .\projeto_GAALK\` para acessar a pasta com o arquivo `manage.py`.
+6. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
+7. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
 
 - ## Colaboradores:
 André Igor Bragança Altivo Passos - 202302376843;
