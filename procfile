@@ -1,1 +1,0 @@
-web: gunicorn GAALK.Django.wsgi
