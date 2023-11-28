@@ -54,7 +54,6 @@
 
                 <ul class="menu-links">
 
-                    {% if user.is_authenticated %}
                     <li class="nav-link">
                         <a href="{% url 'home' %}">
                             <i class='bx bx-home-alt icon' ></i>
@@ -62,19 +61,22 @@
                         </a>
                     </li>
 
+                    {% if user.is_authenticated %}
+                    
                     <li class="nav-link">
-                        <a href="">
+                        <a href="#">
                             <i class='bx bx-tv icon'></i>
                             <span class="text nav-text">Descobrir</span>
                         </a>
                     </li>
 
-                    <!--<li class="nav-link">
+                    <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-library icon'></i>
                             <span class="text nav-text">Biblioteca</span>
                         </a>
-                    </li>-->
+                    </li>
+                    
                     {% endif %}
 
                     <li class="nav-link">

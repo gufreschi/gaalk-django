@@ -65,9 +65,6 @@ def search(request):
     
     else:
         return redirect('error')
-    
-def descobrir(request):
-    pass
 
 def sobre(request):
     return render(request, 'sobre.html', {})
