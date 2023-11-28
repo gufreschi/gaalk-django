@@ -5,10 +5,12 @@ Queremos criar um site para catálogo de filmes com algumas opções de interaç
 
 - ## Funcionalidades:
 O projeto atualmente conta com a página inicial, que servirá para mostrar algumas opções de filmes para o usuário. Também tem o cadastro e login, que faz a autenticação do usuário no back-end.
-Tem a barra de pesquisa de filmes, trazendo todas as buscas encontradas na API, e por fim a função de descobrir aonde o usuário encontrará filmes dos gêneros escolhidos. Todas contam com um menu lateral de navegação.
+E por fim tem a barra de pesquisa de filmes trazendo todas as buscas encontradas na API. Todas contam com um menu lateral de navegação.
 
 - ### Implementações futuras:
-1. Página de biblioteca organizada, onde o usuário pode classificar de 3 formas: O que já assistiu, o que ainda não assistiu e o que está sendo assistido // próximo de ser assistido.
+1. Página descobrir, com a possibilidade de navegar por filmes de gêneros específicos escolhidos pelo usuário.
+
+1. Página biblioteca organizada, onde o usuário pode classificar de 3 formas: O que já assistiu, o que ainda não assistiu e o que está sendo assistido // próximo de ser assistido.
 
 2. Uma parte de 'comentários' em cada filme, aonde os usuários logados podem publicar o que acharam e etc.
 
