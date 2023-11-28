@@ -45,7 +45,10 @@
                 <ul>
                     <li class="search-box">
                         <i class='bx bx-search icon'></i>
-                        <input type="text" placeholder="Pesquisar...">
+                        <form action="{% url 'search' %}" method="get">
+                            <input type="text" name="query" placeholder="Pesquisar...">
+                            <button type="submit" style="display: none;"></button>
+                        </form>
                     </li>
                 </ul>
 
@@ -60,18 +63,18 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="">
                             <i class='bx bx-tv icon'></i>
                             <span class="text nav-text">Descobrir</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    <!--<li class="nav-link">
                         <a href="#">
                             <i class='bx bx-library icon'></i>
                             <span class="text nav-text">Biblioteca</span>
                         </a>
-                    </li>
+                    </li>-->
                     {% endif %}
 
                     <li class="nav-link">

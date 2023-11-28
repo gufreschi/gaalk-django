@@ -14,7 +14,10 @@ def home(request):
     params = {
         'api_key': api_key,
         'primary_release_year': current_year,
-        'sort_by': 'popularity.desc',
+        'sort_by': 'vote_count.desc',
+        'language': 'pt-br',
+        'page': 1,
+        'per_page': 20,
     }
 
     response = requests.get(base_url, params=params)
@@ -26,11 +29,45 @@ def home(request):
         ratings = [result['vote_average'] for result in data.get('results', [])]
         votes = [result['vote_count'] for result in data.get('results', [])]
         overviews = [result['overview'] for result in data.get('results', [])]
-        context = {'posters': zip(posters, titles, ratings, votes, overviews)}
+        
+        context = {'posters': zip(posters, titles, ratings, votes, overviews), 'current_year': current_year}
         return render(request, 'home.html', context)
+    
     else:
-        return redirect('erro')
+        return redirect('error')
+    
+def search(request):
+    api_key = '57f14addda3858ec4ab6c57f9ed23f2c'
+    base_url = 'https://api.themoviedb.org/3/search/movie'
 
+    query = request.GET.get('query', '')
+
+    params = {
+        'api_key': api_key,
+        'query': query,
+        'language': 'pt-br',
+        'page': 1,
+        'per_page': 20,
+    }
+
+    response = requests.get(base_url, params=params)
+
+    if response.status_code == 200:
+        data = response.json()
+        posters = [result['poster_path'] for result in data.get('results', [])]
+        titles = [result['title'] for result in data.get('results', [])]
+        ratings = [result['vote_average'] for result in data.get('results', [])]
+        votes = [result['vote_count'] for result in data.get('results', [])]
+        overviews = [result['overview'] for result in data.get('results', [])]
+
+        context = {'posters': zip(posters, titles, ratings, votes, overviews), 'query': query}
+        return render(request, 'search.html', context)
+    
+    else:
+        return redirect('error')
+    
+def descobrir(request):
+    pass
 
 def sobre(request):
     return render(request, 'sobre.html', {})
@@ -81,5 +118,5 @@ def logout_user(request):
     messages.success(request, ('Você foi desconectado...'))
     return redirect('login')
 
-def erro(request):
-    return render(request, 'erro.html')
+def error(request):
+    return render(request, 'error.html')
