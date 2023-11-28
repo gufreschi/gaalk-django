@@ -31,8 +31,8 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 7. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
 
 - ## Colaboradores:
-André Igor Bragança Altivo Passos - 202302376843;
-Luigi Trevisan Gomes - 202302381529;
-Luiz Gustavo de Lara Freschi - 202303112581;
-Ana Clara Lima da Costa Oliveira - 20230361664;
-Luiz Felipe Dos Santos Kemer - 202208844251;
+1. André Igor Bragança Altivo Passos - 202302376843;
+2. Luigi Trevisan Gomes - 202302381529;
+3. Luiz Gustavo de Lara Freschi - 202303112581;
+4. Ana Clara Lima da Costa Oliveira - 20230361664;
+5. Luiz Felipe Dos Santos Kemer - 202208844251;
