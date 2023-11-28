@@ -26,9 +26,10 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 2. Com o python instalado, você deve agora baixar o seu framework Django. No prompt de comando execute o comando `pip install django`.
 3. Com o framework Django instalado, clone este repositório em sua máquina e abra o conteúdo em alguma IDE (exemplo: Visual Studio Code).
 4. Com o projeto aberto, execute o comando `CTRL + J` para abrir o terminal para instalar um pacote do Django para lidar com a API com o comando `install requests`.
-5. Agora, digite `cd .\projeto_GAALK\` para acessar a pasta com o arquivo `manage.py`.
-6. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
-7. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
+5. Rode o comando `pip install whitenoise` também no terminal, que instalará a biblioteca responsável por carregar os arquivos static.
+6. Agora, digite `cd .\projeto_GAALK\` para acessar a pasta com o arquivo `manage.py`.
+7. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
+8. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
 
 - ## Colaboradores:
 1. André Igor Bragança Altivo Passos - 202302376843;
