@@ -1,1 +1,1 @@
-web: gunicorn GAALK.Django.wsgi
+web: gunicorn projeto_GAALK.wsgi
