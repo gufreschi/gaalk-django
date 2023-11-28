@@ -27,8 +27,13 @@ SECRET_KEY = 'django-insecure-*ngrili35sh1_^gt_mjs%$%wqy+nta_l#zxvj!n8n1id8&s2*e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://projeto-gaalk.fly.dev']
+
+CSRF_COOKIE_DOMAIN = 'projeto-gaalk.fly.dev'
+
+# Add trusted origins that don't need CSRF token
 
 # Application definition
 
