@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+   
+    <section>
+        {% if user.is_authenticated %}
+
+        <h1 class="heading1">Alterar email</h1>
+        
+        <form class="cadastro-card" method="POST" action="{% url 'new-email' %}">
+            {% csrf_token %}
+            <fieldset class="cadastro-item">
+
+                <div class="campo">
+                    <input required type="email" name="email" placeholder="Novo email"/>
+                </div>
+
+                <div>
+                <button type="submit" class="button">Alterar email</button>
+                </div>
+
+            </fieldset>
+        </form>
+
+        {% else %}
+
+        <h1 class="heading1">Você precisa <a href="{% url 'login' %}">efetuar o login</a></h1>
+
+        {% endif %}
+        
+    </section>
+
+{% endblock %}

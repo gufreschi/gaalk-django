@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+   
+    <section>
+        {% if user.is_authenticated %}
+
+        <h1 class="profile-info">Dados de cadastro</h1>
+
+        <br>
+        <br>
+
+        <h2 class="profile-info">Nome de usuário: <br> {{ request.user.username }}</h2>
+        <br>
+
+        {% if request.user.id == profile.user.id %}
+            <a href="{% url 'new-username' %}"><button class="profile-info-button">Alterar nome</button></a>
+        {% endif %}
+
+        <br>
+        <br>
+
+        <h2 class="profile-info">Email: <br> {{ request.user.email }}</h2>
+        <br>
+
+        {% if request.user.id == profile.user.id %}
+            <a href="{% url 'new-email' %}"><button class="profile-info-button">Alterar email</button></a>
+        {% endif %}
+
+        <br>
+        <br>
+
+        {% if request.user.id == profile.user.id %}
+            <a href="{% url 'delete-profile' %}"><button class="profile-info-button">Excluir perfil</button></a>
+        {% endif %}
+
+        {% else %}
+
+        <h1 class="heading1">Você precisa <a href="{% url 'login' %}">efetuar o login</a></h1>
+
+        {% endif %}
+    </section>
+
+{% endblock %}

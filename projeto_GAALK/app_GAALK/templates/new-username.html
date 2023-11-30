@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+   
+    <section>
+        {% if user.is_authenticated %}
+
+        <h1 class="heading1">Alterar o nome de usuário </h1>
+    
+        <form class="cadastro-card" method="POST" action="{% url 'new-username' %}">
+            {% csrf_token %}
+            <fieldset class="cadastro-item">
+
+                <div class="campo">
+                    <input required type="text" name="username" placeholder="Novo nome"/>
+                </div>
+
+                <div>
+                <button type="submit" class="button">Alterar nome</button>
+                </div>
+                
+            </fieldset>
+        </form>
+
+        {% else %}
+
+        <h1 class="heading1">Você precisa <a href="{% url 'login' %}">efetuar o login</a></h1>
+
+        {% endif %}
+    </section>
+
+{% endblock %}

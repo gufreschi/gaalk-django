@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+   
+    <section>
+        {% if user.is_authenticated %}
+
+        <h1 class="heading1">Confirmar exclusão</h1>
+        <div class="extra">
+            <h3>Deseja mesmo excluir o perfil?</h3>
+        </div>
+        <form class="cadastro-card" method="POST" action="{% url 'delete-profile' %}">
+            {% csrf_token %}
+            <fieldset class="cadastro-item">
+
+                <div>
+                    <button type="submit" class="button">Sim, excluir meu perfil</button>
+                </div>
+
+            </fieldset>
+        </form>
+
+        {% else %}
+
+        <h1 class="heading1">Você precisa <a href="{% url 'login' %}">efetuar o login</a></h1>
+
+        {% endif %}
+        
+    </section>
+
+{% endblock %}

@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}">
 
     <!--FONTE-->
-    <link
-      href="https://db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold" rel="stylesheet"/>
+    <link href="https://db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold" rel="stylesheet"/>
     
     <!--Boxicons CSS-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -114,6 +113,21 @@
 
         </div>
     </nav>
+
+    {% if user.is_authenticated %}
+    <header class="greeting">
+        <div class="greeting-text">
+            <li>Olá, {{ request.user.username }}</li> 
+            <li>seja bem vindo</li>
+        </div>
+
+        <div>
+            <a href="{% url 'profile' request.user.id %}">
+                <img class="profile-pic" src="{% static "images/profile-icon.png" %}" alt="foto de perfil">
+            </a>
+        </div>
+    </header>
+    {% endif %}
 
     <div class="container">
         {% if messages %}

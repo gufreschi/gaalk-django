@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from .models import Profile
 import requests
 import datetime
 
@@ -65,6 +66,9 @@ def search(request):
     
     else:
         return redirect('error')
+    
+def error(request):
+    return render(request, 'error.html')
 
 def sobre(request):
     return render(request, 'sobre.html', {})
@@ -115,5 +119,43 @@ def logout_user(request):
     messages.success(request, ('Você foi desconectado...'))
     return redirect('login')
 
-def error(request):
-    return render(request, 'error.html')
+def profile(request, pk):
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user_id=pk)
+        return render(request, 'profile.html', {'profile':profile})
+    else:
+        messages.error(request, ("Você precisa estar conectado."))
+        return redirect('home')
+    
+def new_username(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            new_username = request.POST.get('username')
+            request.user.username = new_username
+            request.user.save()
+            messages.success(request, 'Nome alterado!')
+            return redirect('profile', pk=request.user.id)
+        return render(request, 'new-username.html', {})
+    else:
+        messages.error(request, 'Você precisa estar conectado.')
+        return redirect('home')
+
+def new_email(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            new_email = request.POST.get('email')
+            request.user.email = new_email
+            request.user.save()
+            messages.success(request, 'Email alterado!')
+            return redirect('profile', pk=request.user.id)
+        return render(request, 'new-email.html', {})
+    else:
+        messages.error(request, 'Você precisa estar conectado.')
+        return redirect('home')
+    
+def delete_profile(request):
+    if request.method == 'POST':
+        request.user.delete()
+        messages.success(request, 'Conta excluida')
+        return redirect('home')
+    return render(request, 'delete-profile.html')

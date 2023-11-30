@@ -4,12 +4,12 @@
 {% load static %}
 
     {% if user.is_authenticated %}
-    <h1> Você já está conectado! </h1>
+    <h1 class="heading1">Você já está conectado!</h1>
 
     {% else %}
 
     <section>
-        <h2 id="heading1">Login</h2>
+        <h2 class="heading1">Login</h2>
         
         <form class="login-card" method="POST" action=" {% url 'login' %}">
 
