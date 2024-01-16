@@ -8,7 +8,7 @@ O site ainda conta apenas com um banco de dados SQLite, então toda a parte de a
 # Introdução
 
 - ## Descrição do projeto:
-Queremos criar um site para catálogo de filmes com algumas opções de interação com o usuário, para que os usuários possam ter uma ferramenta filtrada e que ajude-os a se organizar e expor opiniões.
+Queria criar um site para catálogo de filmes com algumas opções de interação, para que os usuários possam ter uma ferramenta filtrada e que ajude-os a se organizar e expor opiniões.
 
 - ## Funcionalidades:
 O projeto atualmente conta com a página inicial, que servirá para mostrar algumas opções de filmes para o usuário. Também tem o cadastro e login, que faz a autenticação do usuário no back-end.
@@ -22,7 +22,7 @@ E por fim tem a barra de pesquisa de filmes trazendo todas as buscas encontradas
 2. Uma parte de 'comentários' em cada filme, aonde os usuários logados podem publicar o que acharam e etc.
 
 - ## Tecnologias utilizadas:
-Por enquanto o projeto conta com HTML, CSS e algumas funcionalidades em JavaScript para o front-end. Em futuras atualizações pretendemos usar um framework (REACT ou ANGULAR).
+Por enquanto o projeto conta com HTML, CSS e algumas funcionalidades em JavaScript para o front-end. Em futuras atualizações pretendo usar um framework (bem provável que eu use Vue.js).
 O back-end foi feito com Python e seu framework Django.
 
 # Configuração do ambiente
@@ -37,10 +37,3 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 6. Agora, digite `cd .\projeto_GAALK\` para acessar a pasta com o arquivo `manage.py`.
 7. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
 8. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
-
-# Colaboradores:
-1. André Igor Bragança Altivo Passos - 202302376843;
-2. Luigi Trevisan Gomes - 202302381529;
-3. Luiz Gustavo de Lara Freschi - 202303112581;
-4. Ana Clara Lima da Costa Oliveira - 20230361664;
-5. Luiz Felipe Dos Santos Kemer - 202208844251;
