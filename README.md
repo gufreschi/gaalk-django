@@ -1,12 +1,5 @@
 # GAALK
 
-Hospedagem atual do site: https://projeto-gaalk.fly.dev/
-
-PS:
-O site ainda conta apenas com um banco de dados SQLite, então toda a parte de autenticação e login não funciona no site hospedado. Caso queira testar essa parte, rode o site em sua máquina.
-
-# Introdução
-
 - ## Descrição do projeto:
 Queria criar um site para catálogo de filmes com algumas opções de interação, para que os usuários possam ter uma ferramenta filtrada e que ajude-os a se organizar e expor opiniões.
 
