@@ -17,7 +17,7 @@ E por fim tem a barra de pesquisa de filmes trazendo todas as buscas encontradas
 - ### Implementações futuras:
 1. Página descobrir, com a possibilidade de navegar por filmes de gêneros específicos escolhidos pelo usuário.
 
-1. Página biblioteca organizada, onde o usuário pode classificar de 3 formas: O que já assistiu, o que ainda não assistiu e o que está sendo assistido // próximo de ser assistido.
+1. Página biblioteca organizada, onde o usuário pode classificar de 3 formas: O que já assistiu, o que ainda não assistiu e o que está próximo de ser assistido.
 
 2. Uma parte de 'comentários' em cada filme, aonde os usuários logados podem publicar o que acharam e etc.
 
