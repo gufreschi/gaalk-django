@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-*ngrili35sh1_^gt_mjs%$%wqy+nta_l#zxvj!n8n1id8&s2*e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://projeto-gaalk.fly.dev']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
 
-CSRF_COOKIE_DOMAIN = 'projeto-gaalk.fly.dev'
+CSRF_COOKIE_DOMAIN = 'localhost'
 
 # Add trusted origins that don't need CSRF token
 
@@ -43,14 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'app_GAALK.apps.AppGaalkConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,9 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'app_GAALK' / 'static',
+]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
