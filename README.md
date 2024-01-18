@@ -15,7 +15,7 @@ E por fim tem a barra de pesquisa de filmes trazendo todas as buscas encontradas
 2. Uma parte de 'comentários' em cada filme, aonde os usuários logados podem publicar o que acharam e etc.
 
 - ## Tecnologias utilizadas:
-Por enquanto o projeto conta com HTML, CSS e algumas funcionalidades em JavaScript para o front-end. Em futuras atualizações pretendo usar um framework (bem provável que eu use Vue.js).
+Por enquanto o projeto conta com HTML, CSS e JavaScript para o front-end. Em futuras atualizações pretendo usar um framework (bem provável que eu use Vue.js).
 O back-end foi feito com Python e seu framework Django.
 
 # Configuração do ambiente
@@ -30,3 +30,17 @@ Nessa parte você encontrará o necessário para rodar o projeto em sua máquina
 6. Agora, digite `cd .\projeto_GAALK\` para acessar a pasta com o arquivo `manage.py`.
 7. Por fim, rode o comando `python .\manage.py runserver` e a sua máquina estará rodando o projeto, caso não houver nenhum erro.
 8. Abra o link da porta local pelo terminal com `CTRL + Click` ou diretamente no navegador com a URL padrão: `http://127.0.0.1:8000/`.
+
+# Imagens
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/cda686a2-abd9-4b5c-bea5-96e329c72505)
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/398bb163-e43b-41e3-9780-01d741fa7f8a)
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/93e8e749-28fd-401e-ba66-4040d1885f9f)
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/ee6b193f-66bc-4f90-9825-46961acc6f29)
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/3c347244-1b33-462f-9364-ed3ac6baaf37)
+
+![image](https://github.com/gufreschi/gaalk-django/assets/142360744/f51e908a-29b6-4168-8ac6-87523d5f16df)
