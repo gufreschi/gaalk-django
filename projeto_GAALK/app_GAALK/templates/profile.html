@@ -1,37 +1,148 @@
-{% extends "base.html" %}
-{% block content %}
-   
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,max-scale=1">
+    
+    {% load static %}
+
+    <!--CSS-->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+    <!--FONTE-->
+
+    
+    <!--Boxicons CSS-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="{% static "images/ticket-favicon.ico" %}" type="image/x-icon">
+
+    <title>GAALK</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{% static "images/ticket-icon.png" %}" alt="movie ticket">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">GAALK</span>
+                    <span class="description">Catálogo de Filmes</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul>
+                    <li class="search-box">
+                        <i class='bx bx-search icon'></i>
+                        <form action="{% url 'search' %}" method="get">
+                            <input type="text" name="query" placeholder="Pesquisar...">
+                            <button type="submit" style="display: none;"></button>
+                        </form>
+                    </li>
+                </ul>
+
+                <ul class="menu-links">
+
+                    <li class="nav-link">
+                        <a href="{% url 'home' %}">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-tv icon'></i>
+                            <span class="text nav-text">Descobrir</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-library icon'></i>
+                            <span class="text nav-text">Biblioteca</span>
+                        </a>
+                    </li>
+                    
+                    {% endif %}
+
+                    <li class="nav-link">
+                        <a href="{% url 'sobre' %}">
+                            <i class='bx bx-at icon'></i>
+                            <span class="text nav-text">Sobre</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="bottom-content">
+                <ul>
+                    <li>
+                        <a href="{% url 'logout' %}">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+            <div class="bottom-content">
+                <ul>
+                    <li>
+                        <a href="{% url 'login' %}">
+                            <i class='bx bx-log-in icon'></i>
+                            <span class="text nav-text">Entrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+
+        </div>
+    </nav>
+
+    <script src="{% static "js/script.js" %}"></script>
+
+<!-- NAVBAR LATERAL SEM EXTENDER O TEMPLATE BASE -->
+
     <section>
         {% if user.is_authenticated %}
 
-        <h1 class="profile-info">Dados de cadastro</h1>
-
-        <br>
-        <br>
-
-        <h2 class="profile-info">Nome de usuário: <br> {{ request.user.username }}</h2>
-        <br>
-
-        {% if request.user.id == profile.user.id %}
-            <a href="{% url 'new-username' %}"><button class="profile-info-button">Alterar nome</button></a>
-        {% endif %}
-
-        <br>
-        <br>
-
-        <h2 class="profile-info">Email: <br> {{ request.user.email }}</h2>
-        <br>
-
-        {% if request.user.id == profile.user.id %}
-            <a href="{% url 'new-email' %}"><button class="profile-info-button">Alterar email</button></a>
-        {% endif %}
-
-        <br>
-        <br>
-
-        {% if request.user.id == profile.user.id %}
-            <a href="{% url 'delete-profile' %}"><button class="profile-info-button">Excluir perfil</button></a>
-        {% endif %}
+        <div class="profile-card">
+            <h1 class="profile-info">Dados de cadastro</h1>
+            <br>
+            <br>
+            <h2 class="profile-info">Nome de usuário: <br> {{ request.user.username }}</h2>
+            <br>
+            {% if request.user.id == profile.user.id %}
+                <a href="{% url 'new-username' %}"><button class="profile-info-button">Alterar nome</button></a>
+            {% endif %}
+            <br>
+            <br>
+            <h2 class="profile-info">Email: <br> {{ request.user.email }}</h2>
+            <br>
+            {% if request.user.id == profile.user.id %}
+                <a href="{% url 'new-email' %}"><button class="profile-info-button">Alterar email</button></a>
+            {% endif %}
+            <br>
+            <br>
+            {% if request.user.id == profile.user.id %}
+                <a href="{% url 'delete-profile' %}"><button class="profile-info-button">Excluir perfil</button></a>
+            {% endif %}
+        </div>
 
         {% else %}
 
@@ -39,5 +150,3 @@
 
         {% endif %}
     </section>
-
-{% endblock %}
